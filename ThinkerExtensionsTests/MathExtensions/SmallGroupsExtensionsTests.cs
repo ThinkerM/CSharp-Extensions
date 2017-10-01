@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
-using ThinkerExtensions.NumericalExtensions;
+using ThinkerExtensions.MathExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThinkerExtensions.NumericalExtensions.Tests
+namespace ThinkerExtensions.MathExtensions.Tests
 {
     [TestFixture]
     public class SmallGroupsExtensionsTests

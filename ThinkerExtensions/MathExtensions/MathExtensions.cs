@@ -5,7 +5,7 @@ namespace ThinkerExtensions.MathExtensions
     /// <summary>
     /// Provides additional methods related to number manipulation
     /// </summary>
-    public static class NumericalExtensions
+    public static class MathExtensions
     {
         /// <summary>
         /// Checks whether the specified value is not a number (double.NaN)

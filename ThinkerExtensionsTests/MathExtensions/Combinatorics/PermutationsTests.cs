@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using ThinkerExtensions.NumericalExtensions.Combinatorics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThinkerExtensions.MathExtensions.Combinatorics;
 
-namespace ThinkerExtensions.NumericalExtensions.Combinatorics.Tests
+namespace ThinkerExtensions.MathExtensions.Combinatorics.Tests
 {
     [TestFixture]
     public class PermutationsTests
