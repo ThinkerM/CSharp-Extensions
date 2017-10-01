@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace GeometryExtensions
+namespace ThinkerExtensions.GeometryExtensions
 {
     /// <summary>
     /// Representation of a line in 2D

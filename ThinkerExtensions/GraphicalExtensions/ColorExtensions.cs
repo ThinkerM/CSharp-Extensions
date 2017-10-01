@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace GraphicalExtensions
+namespace ThinkerExtensions.GraphicalExtensions
 {
     /// <summary>
     /// Provides extensions methods for <see cref="System.Drawing.Color"/>

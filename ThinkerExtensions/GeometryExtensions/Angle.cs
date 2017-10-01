@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeometryExtensions
+namespace ThinkerExtensions.GeometryExtensions
 {
     /// <summary>
     /// Normalized representation of an angle (within 0-2π / 0-360°)
@@ -16,7 +16,7 @@ namespace GeometryExtensions
         /// Representation of angle in radians
         /// </summary>
         public double Radians 
-            => GeometryExtensions.DegreesToRadians(Degrees);
+            => Degrees.ToRadians();
 
         private Angle(int degrees)
         {
@@ -25,7 +25,7 @@ namespace GeometryExtensions
 
         private Angle(double radians)
         {
-            Degrees = Normalize(GeometryExtensions.RadiansToDegrees(radians));
+            Degrees = Normalize(radians.ToDegrees());
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace GeometryExtensions
         /// <returns>Angle represented by value</returns>
         public static Angle FromRadians(double radians)
         {
-            return new Angle(Normalize(GeometryExtensions.RadiansToDegrees(radians)));
+            return new Angle(Normalize(radians.ToDegrees()));
         }
 
         /// <summary>

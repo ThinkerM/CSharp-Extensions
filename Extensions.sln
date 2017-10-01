@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkerExtensions", "ThinkerExtensions\ThinkerExtensions.csproj", "{8DA510AA-270F-4929-8791-B8E0140EABC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkerExtensionsTests", "ThinkerExtensionsTests\ThinkerExtensionsTests.csproj", "{4973832D-9FC5-40FE-B7BE-168D2C0FB4EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DA510AA-270F-4929-8791-B8E0140EABC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA510AA-270F-4929-8791-B8E0140EABC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA510AA-270F-4929-8791-B8E0140EABC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA510AA-270F-4929-8791-B8E0140EABC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4973832D-9FC5-40FE-B7BE-168D2C0FB4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4973832D-9FC5-40FE-B7BE-168D2C0FB4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4973832D-9FC5-40FE-B7BE-168D2C0FB4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4973832D-9FC5-40FE-B7BE-168D2C0FB4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73308F2D-7FCD-4F68-B743-1CD3B4836C8C}
+	EndGlobalSection
+EndGlobal

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GeometryExtensions")]
+[assembly: AssemblyTitle("ThinkerExtensions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GeometryExtensions")]
+[assembly: AssemblyProduct("ThinkerExtensions")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d4af2872-c628-4325-a1ca-731d6e3d6c2e")]
+[assembly: Guid("8da510aa-270f-4929-8791-b8e0140eabc7")]
 
 // Version information for an assembly consists of the following four values:
 //

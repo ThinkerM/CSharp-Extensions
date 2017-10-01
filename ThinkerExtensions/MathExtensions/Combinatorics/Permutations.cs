@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NumericalExtensions.Combinatorics
+namespace ThinkerExtensions.MathExtensions.Combinatorics
 {
         /// <summary>
         /// Provides enumeration over every permutation of a sequence

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NumericalExtensions
+namespace ThinkerExtensions.MathExtensions
 {
     /// <summary>
     /// Provides additional methods related to number manipulation
@@ -48,6 +48,28 @@ namespace NumericalExtensions
         public static double Power(this float value, double power)
         {
             return Math.Pow(value, power);
+        }
+
+        /// <summary>
+        /// Rounds the value to a specified number of fractional digits
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="decimalPlaces"></param>
+        /// <returns></returns>
+        public static double Round(this double value, int decimalPlaces)
+        {
+            return Math.Round(value, decimalPlaces);
+        }
+
+        /// <summary>
+        /// Rounds the value to a specified number of fractional digits
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="decimalPlaces"></param>
+        /// <returns></returns>
+        public static decimal Round(this decimal value, int decimalPlaces)
+        {
+            return Math.Round(value, decimalPlaces);
         }
     }
 }

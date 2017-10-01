@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Linq;
 
-namespace NumericalExtensions
+namespace ThinkerExtensions.MathExtensions
 {
     /// <summary>
     /// Provides extensions methods which already exist for <see cref="IEnumerable"/> 

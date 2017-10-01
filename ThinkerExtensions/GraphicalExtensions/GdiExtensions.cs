@@ -2,7 +2,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-namespace GraphicalExtensions
+namespace ThinkerExtensions.GraphicalExtensions
 {
     /// <summary>
     /// Provides helper methods related to Windows GDI
