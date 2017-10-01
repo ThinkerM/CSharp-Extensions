@@ -82,8 +82,6 @@ namespace ThinkerExtensions.StringExtensions.Tests
         [TestCase("black", true, ConsoleColor.Black, false)]
         [TestCase("A", true, ConsoleKey.A, false)]
         [TestCase("conTroLBrEAK", false, ConsoleSpecialKey.ControlBreak, true)]
-        [TestCase("Enum1", true, "Expect ArgumentException", true)] //not-enum types expected to throw ArgumentException
-        [TestCase("Enum1", true, int.MaxValue, true)] //non-enum types expected to throw ArgumentException
         public void ParseEnumSpecifyIgnoreCaseTest<TEnum>(string input, bool ignoreCase, TEnum expectedResult, bool parsingShouldFail)
         {
             try
@@ -101,6 +99,27 @@ namespace ThinkerExtensions.StringExtensions.Tests
             }
             Assert.IsFalse(parsingShouldFail);
             Assert.AreEqual(expectedResult, input.ParseEnum<TEnum>(ignoreCase));
+        }
+
+        [Test]
+        [TestCase("FakeEnum", "FakeEnum")]
+        [TestCase("FakeEnum", int.MaxValue)]
+        [TestCase("Black", ConsoleColor.Black)]
+        [TestCase("eNuM1", TestEnum.Enum1)]
+        public void ParseEnumBadInputsTest<T>(string input, T expectedResult) 
+            //not-enum target types expected to throw ArgumentException
+        {
+            bool targetTypeIsEnum = typeof(T).IsEnum;
+            try
+            {
+                input.ParseEnum<T>();
+            }
+            catch (ArgumentException)
+            {
+                if (!targetTypeIsEnum)
+                    return; //Exception was OK to throw
+            }
+            Assert.IsTrue(targetTypeIsEnum);
         }
 
         [Test]
