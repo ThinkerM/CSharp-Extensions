@@ -54,7 +54,6 @@
     <Compile Include="GeometryExtensions\GeometryExtensionsTests.cs" />
     <Compile Include="GraphicalExtensions\ColorExtensionsTests.cs" />
     <Compile Include="GraphicalExtensions\GdiExtensionsTests.cs" />
-    <Compile Include="MathExtensions\Combinatorics\PermutationsTests.cs" />
     <Compile Include="MathExtensions\MathExtensionsTests.cs" />
     <Compile Include="MathExtensions\SmallGroupsExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

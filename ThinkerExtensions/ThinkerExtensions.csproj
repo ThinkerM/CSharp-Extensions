@@ -48,7 +48,6 @@
     <Compile Include="GeometryExtensions\Angle.cs" />
     <Compile Include="StringAndCharsExtensions\CharExtensions.cs" />
     <Compile Include="GeometryExtensions\GeometryExtensions.cs" />
-    <Compile Include="MathExtensions\Combinatorics\Permutations.cs" />
     <Compile Include="MathExtensions\MathExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MathExtensions\SmallGroupsExtensions.cs" />
