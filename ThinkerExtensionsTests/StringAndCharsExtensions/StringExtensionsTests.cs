@@ -2,6 +2,7 @@
 using ThinkerExtensions.StringExtensions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,16 +45,62 @@ namespace ThinkerExtensions.StringExtensions.Tests
             Assert.AreEqual(expectedResult, input.Wordify());
         }
 
+        public enum TestEnum { Enum1, Enum2, Enum3 }
+
         [Test]
-        public void ParseEnumTest()
+        [TestCase("enum1", TestEnum.Enum1)]
+        [TestCase("Enum1", TestEnum.Enum1)]
+        [TestCase("EnUM1", TestEnum.Enum1)]
+        [TestCase("enum2", TestEnum.Enum2)]
+        [TestCase("enum3", TestEnum.Enum3)]
+        [TestCase("black", ConsoleColor.Black)]
+        [TestCase("A", ConsoleKey.A)]
+        [TestCase("conTroLBrEAK", ConsoleSpecialKey.ControlBreak)]
+        [TestCase("", TestEnum.Enum3)]
+        public void ParseEnumTest<TEnum>(string input, TEnum expectedResult)
         {
-            Assert.Fail();
+            try
+            {
+                input.ParseEnum<TEnum>();
+            }
+            catch (ArgumentException)
+            {
+                Assert.IsTrue(input.IsNullOrEmpty());
+                return;
+            }
+            catch (Exception)
+            {
+                Assert.Fail();
+            }
+            Assert.AreEqual(expectedResult, input.ParseEnum<TEnum>());
         }
 
         [Test]
-        public void ParseEnumTest1()
+        [TestCase("enum1", false, TestEnum.Enum1, true)]
+        [TestCase("Enum1", false, TestEnum.Enum1, false)]
+        [TestCase("EnUM1", true, TestEnum.Enum1, false)]
+        [TestCase("black", true, ConsoleColor.Black, false)]
+        [TestCase("A", true, ConsoleKey.A, false)]
+        [TestCase("conTroLBrEAK", false, ConsoleSpecialKey.ControlBreak, true)]
+        [TestCase("Enum1", true, "Expect ArgumentException", true)] //not-enum types expected to throw ArgumentException
+        [TestCase("Enum1", true, int.MaxValue, true)] //non-enum types expected to throw ArgumentException
+        public void ParseEnumSpecifyIgnoreCaseTest<TEnum>(string input, bool ignoreCase, TEnum expectedResult, bool parsingShouldFail)
         {
-            Assert.Fail();
+            try
+            {
+                input.ParseEnum<TEnum>(ignoreCase);
+            }
+            catch (ArgumentException)
+            {
+                Assert.IsTrue(parsingShouldFail);
+                return;
+            } 
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+            Assert.IsFalse(parsingShouldFail);
+            Assert.AreEqual(expectedResult, input.ParseEnum<TEnum>(ignoreCase));
         }
 
         [Test]
