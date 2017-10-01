@@ -55,9 +55,7 @@
     <Compile Include="GraphicalExtensions\ColorExtensionsTests.cs" />
     <Compile Include="GraphicalExtensions\GdiExtensionsTests.cs" />
     <Compile Include="MathExtensions\MathExtensionsTests.cs" />
-    <Compile Include="MathExtensions\SmallGroupsExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomExtensions\RandomExtensionsTests.cs" />
     <Compile Include="SerializationExtensions\XmlSerializationExtensionsTests.cs" />
     <Compile Include="StringAndCharsExtensions\CharExtensionsTests.cs" />
     <Compile Include="StringAndCharsExtensions\StringExtensionsTests.cs" />

@@ -14,7 +14,7 @@ namespace ThinkerExtensions.MathExtensions
         /// <returns>True if value is double.NaN, False otherwise</returns>
         public static bool IsNaN(this double value)
         {
-            return double.IsNaN(value);
+            return Double.IsNaN(value);
         }
 
         /// <summary>
@@ -40,17 +40,6 @@ namespace ThinkerExtensions.MathExtensions
         }
 
         /// <summary>
-        /// Raises the number to a specified power
-        /// </summary>
-        /// <param name="value">Number to raise</param>
-        /// <param name="power">Power to raise to</param>
-        /// <returns>Specified value raised to the specified power</returns>
-        public static double Power(this float value, double power)
-        {
-            return Math.Pow(value, power);
-        }
-
-        /// <summary>
         /// Rounds the value to a specified number of fractional digits
         /// </summary>
         /// <param name="value"></param>
@@ -70,6 +59,28 @@ namespace ThinkerExtensions.MathExtensions
         public static decimal Round(this decimal value, int decimalPlaces)
         {
             return Math.Round(value, decimalPlaces);
+        }
+
+        /// <summary>
+        /// Arithmetic mean of two values
+        /// </summary>
+        /// <param name="value1">First value to compute mean from</param>
+        /// <param name="value2">Second value to compute mean from</param>
+        /// <returns>Mean of both values</returns>
+        public static double Mean(this double value1, double value2)
+        {
+            return (value1 + value2) / 2;
+        }
+
+        /// <summary>
+        /// Arithmetic mean of two values
+        /// </summary>
+        /// <param name="value1">First value to compute mean from</param>
+        /// <param name="value2">Second value to compute mean from</param>
+        /// <returns>Mean of both values</returns>
+        public static double Mean(this int value1, int value2)
+        {
+            return (double)(value1 + value2) / 2;
         }
     }
 }

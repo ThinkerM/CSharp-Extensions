@@ -12,15 +12,25 @@ namespace ThinkerExtensions.StringAndCharsExtensions.Tests
     public class CharExtensionsTests
     {
         [Test]
-        public void ToUpperTest()
+        [TestCase('a', 'A')]
+        [TestCase('!', '!')]
+        [TestCase('7', '7')]
+        [TestCase('Y', 'Y')]
+        [TestCase('á', 'Á')]
+        public void ToUpperTest(char input, char expectedResult)
         {
-            Assert.Fail();
+            Assert.AreEqual(expectedResult, input.ToUpper());
         }
 
         [Test]
-        public void ToLowerTest()
+        [TestCase('B', 'b')]
+        [TestCase('?', '?')]
+        [TestCase('9', '9')]
+        [TestCase('w', 'w')]
+        [TestCase('Ž', 'ž')]
+        public void ToLowerTest(char input, char expectedResult)
         {
-            Assert.Fail();
+            Assert.AreEqual(expectedResult, input.ToLower());
         }
     }
 }

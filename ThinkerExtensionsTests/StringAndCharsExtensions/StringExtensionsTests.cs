@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ThinkerExtensions.StringAndCharsExtensions;
 
 namespace ThinkerExtensions.StringExtensions.Tests
 {
@@ -12,15 +13,24 @@ namespace ThinkerExtensions.StringExtensions.Tests
     public class StringExtensionsTests
     {
         [Test]
-        public void IsNullOrEmptyTest()
+        [TestCase("full", false)]
+        [TestCase("", true)]
+        [TestCase(null, true)]
+        [TestCase("null", false)]
+        public void IsNullOrEmptyTest(string input, bool expectedResult)
         {
-            Assert.Fail();
+            Assert.AreEqual(expectedResult, input.IsNullOrEmpty());
         }
 
         [Test]
-        public void CapitalizeTest()
+        [TestCase("string","String")]
+        [TestCase("String", "String")]
+        [TestCase("STRING", "STRING")]
+        [TestCase("!", "!")]
+        [TestCase("+plus", "+plus")]
+        public void CapitalizeTest(string input, string expectedResult)
         {
-            Assert.Fail();
+            Assert.AreEqual(expectedResult, input.Capitalize());
         }
 
         [Test]
