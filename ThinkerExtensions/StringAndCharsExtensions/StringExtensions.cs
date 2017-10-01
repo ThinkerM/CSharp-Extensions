@@ -91,19 +91,24 @@ namespace ThinkerExtensions.StringAndCharsExtensions
         /// <returns></returns>
         public static string RemoveLastCharacter(this string value)
         {
-            if (value.IsNullOrEmpty()) throw new ArgumentException("Input is either empty or null", nameof(value));
-            return value.Substring(0, value.Length - 1);
+            return value.IsNullOrEmpty()
+                ? value
+                : value.Substring(0, value.Length - 1);
         }
 
         /// <summary>
-        /// Remove the specified number of characters from the end of the string
+        /// Remove the specified amount of characters from the end of the string
         /// </summary>
         /// <param name="value">String to remove from</param>
-        /// <param name="number">Number of characters to remove</param>
+        /// <param name="amount">Number of characters to remove</param>
         /// <returns></returns>
-        public static string RemoveLast(this string value, int number)
+        public static string RemoveLast(this string value, int amount)
         {
-           return value.Remove(value.Length - number - 1); 
+            if (amount == 0 || value.IsNullOrEmpty())
+                return value;
+            return amount >= value.Length
+                ? string.Empty
+                : value.Remove(value.Length - amount);
         }
 
         /// <summary>
@@ -113,18 +118,25 @@ namespace ThinkerExtensions.StringAndCharsExtensions
         /// <returns></returns>
         public static string RemoveFirstCharacter(this string value)
         {
-            return value.Substring(1);
+            return value.IsNullOrEmpty()
+                ? value
+                : value.Substring(1);
         }
 
         /// <summary>
-        /// Remove the specified number of characters from the beginning of the string
+        /// Remove the specified amount of characters from the beginning of the string
         /// </summary>
         /// <param name="value">String to remove from</param>
-        /// <param name="number">Number of characters to remove</param>
+        /// <param name="amount">Number of characters to remove</param>
         /// <returns></returns>
-        public static string RemoveFirst(this string value, int number)
+        public static string RemoveFirst(this string value, int amount)
         {
-            return value.Substring(number);
+            if (amount == 0 || value.IsNullOrEmpty())
+                return value;
+
+            return amount >= value.Length
+                ? string.Empty
+                : value.Substring(amount);
         }
     }
 }
