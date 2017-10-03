@@ -48,21 +48,30 @@ namespace ThinkerExtensions.DictionaryExtensions.Tests
             dictionary.Increment(key, incrementValue);
             Assert.AreEqual(incrementValue, dictionary[key]);
 
-            dictionary.Increment(incrementValue);
-            dictionary.Increment(incrementValue);
+            dictionary.Increment(key, incrementValue);
+            dictionary.Increment(key, incrementValue);
             Assert.AreEqual(incrementValue * 3, dictionary[key]);
         }
 
         [Test]
-        public void ParalellIncrementTest<T>()
+        public void ParalellIncrementTest()
         {
             dictionary.Increment("key1", 10);
             dictionary.Increment("key2");
             Assert.AreEqual(10, dictionary["key1"]);
             Assert.AreEqual(1, dictionary["key2"]);
 
-            dictionary.Increment("key1", -10);
-            Assert.AreEqual(0, dictionary["key1"]);
+            dictionary.Increment("key1", -20);
+            Assert.AreEqual(-10, dictionary["key1"]);
+        }
+
+        [Test]
+        public void IncrementAndRemoveTest()
+        {
+            dictionary.Increment("key", 5);
+            dictionary.Remove("key");
+            dictionary.Increment("key", -10);
+            Assert.AreEqual(-10, dictionary["key"]);
         }
     }
 }
