@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ThinkerExtensions.DictionaryExtensions
 {
     /// <summary>
-    /// Provides extensions methods for <see cref="Dictionary{TKey,TValue}"/>
+    /// Provides extensions methods for <see cref="IDictionary{TKey,TValue}"/>
     /// </summary>
     public static class DictionaryExtensions
     {
@@ -19,7 +19,7 @@ namespace ThinkerExtensions.DictionaryExtensions
         /// <param name="dictionary">Dictionary to increment in</param>
         /// <param name="key">Key whose value will be incremented</param>
         /// <param name="amount"></param>
-        public static void Increment<T>(this Dictionary<T, int> dictionary, T key, int amount = 1)
+        public static void Increment<T>(this IDictionary<T, int> dictionary, T key, int amount = 1)
         {
             if (!dictionary.ContainsKey(key))
                 dictionary.Add(key, 0);

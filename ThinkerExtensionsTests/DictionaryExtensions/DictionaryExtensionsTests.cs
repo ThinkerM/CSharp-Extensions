@@ -11,7 +11,7 @@ namespace ThinkerExtensions.DictionaryExtensions.Tests
     [TestFixture]
     public class DictionaryExtensionsTests
     {
-        private Dictionary<dynamic, int> dictionary;
+        private IDictionary<dynamic, int> dictionary;
 
         [SetUp]
         public void SetUpDictionary()
