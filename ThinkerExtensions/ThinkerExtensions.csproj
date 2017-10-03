@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DictionaryExtensions\DictionaryExtensions.cs" />
     <Compile Include="GraphicalExtensions\ColorExtensions.cs" />
     <Compile Include="GraphicalExtensions\GdiExtensions.cs" />
     <Compile Include="GeometryExtensions\AdvancedGeometry.cs" />
