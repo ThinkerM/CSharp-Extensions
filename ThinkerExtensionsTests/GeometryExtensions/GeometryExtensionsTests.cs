@@ -16,7 +16,7 @@ namespace ThinkerExtensions.GeometryExtensions.Tests
         [TestCase(0, 0)]
         [TestCase(1, 57)]
         [TestCase(-1, -57)]
-        [TestCase(3.14159, 180)]
+        [TestCase(Math.PI, 180)]
         public void RadiansToDegreesTest(double radians, int expectedResult)
         {
             Assert.AreEqual(radians.ToDegrees(), expectedResult);
