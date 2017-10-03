@@ -51,6 +51,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="DictionaryExtensions\DictionaryExtensionsTests.cs" />
     <Compile Include="GeometryExtensions\GeometryExtensionsTests.cs" />
     <Compile Include="GraphicalExtensions\ColorExtensionsTests.cs" />
     <Compile Include="GraphicalExtensions\GdiExtensionsTests.cs" />
