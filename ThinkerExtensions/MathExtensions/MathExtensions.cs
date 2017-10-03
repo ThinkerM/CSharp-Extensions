@@ -82,5 +82,38 @@ namespace ThinkerExtensions.MathExtensions
         {
             return (double)(value1 + value2) / 2;
         }
+
+        /// <summary>
+        /// Determine if number is prime
+        /// </summary>
+        /// <param name="value">Number to check for prime-ness</param>
+        /// <returns>True if value is prime, False otherwise</returns>
+        public static bool IsPrime(this int value)
+        {
+            long longValue = (long) value;
+            return longValue.IsPrime();
+        }
+
+        /// <summary>
+        /// Determine if number is prime
+        /// </summary>
+        /// <param name="value">Number to check for prime-ness</param>
+        /// <returns>True if value is prime, False otherwise</returns>
+        public static bool IsPrime(this long value)
+        {
+            if (value == 1) return false;
+            if (value <= 0) return false;
+            if (value == 2) return true;
+            if (value % 2 == 0) return false;
+
+            int boundary = (int)Math.Floor(Math.Sqrt(value));
+
+            for (int i = 3; i <= boundary; i += 2)
+            {
+                if (value % i == 0) return false;
+            }
+
+            return true;
+        }
     }
 }
