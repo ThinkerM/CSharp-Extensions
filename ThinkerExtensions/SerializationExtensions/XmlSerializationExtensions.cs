@@ -13,7 +13,7 @@ namespace ThinkerExtensions.SerializationExtensions
         /// <typeparam name="T">Any class type</typeparam>
         /// <param name="obj">Object to serialize</param>
         /// <returns>A string that represents Xml, empty otherwise</returns>
-        public static string XmlSerialize<T>(this T obj) 
+        public static string ToXml<T>(this T obj) 
             where T : class, new()
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
@@ -30,7 +30,7 @@ namespace ThinkerExtensions.SerializationExtensions
         /// <typeparam name="T">Any class type</typeparam>
         /// <param name="xml">Xml as string to deserialize from</param>
         /// <returns>A new object of type T is successful, null if failed</returns>
-        public static T XmlDeserialize<T>(this string xml) 
+        public static T FromXml<T>(this string xml) 
             where T : class, new()
         {
             if (xml == null) throw new ArgumentNullException(nameof(xml));
