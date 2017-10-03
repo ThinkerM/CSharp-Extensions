@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
-using ThinkerExtensions.MathExtensions;
+﻿using ThinkerExtensions.MathExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace ThinkerExtensions.MathExtensions.Tests
 {
@@ -12,7 +12,7 @@ namespace ThinkerExtensions.MathExtensions.Tests
     public class MathExtensionsTests
     {
         [Test]
-        [TestCase(1,false)]
+        [TestCase(1, false)]
         [TestCase(null, false)]
         [TestCase(double.NaN, true)]
         [TestCase(double.NegativeInfinity, false)]
@@ -27,7 +27,7 @@ namespace ThinkerExtensions.MathExtensions.Tests
             }
             catch (InvalidCastException)
             { Assert.IsFalse(expectedResult); }
-            catch(Exception e)
+            catch (Exception e)
             { Assert.Fail(e.Message); }
         }
 
@@ -85,6 +85,36 @@ namespace ThinkerExtensions.MathExtensions.Tests
         public void MeanTestDouble(double value1, double value2, double expectedResult)
         {
             Assert.AreEqual(expectedResult, value1.Mean(value2));
+        }
+
+        [Test]
+        [TestCase(2, true)]
+        [TestCase(3, true)]
+        [TestCase(1, false)]
+        [TestCase(0, false)]
+        [TestCase(-1, false)]
+        [TestCase(17, true)]
+        [TestCase(472882049, true)]
+        [TestCase(472882047, false)]
+        public void IsPrimeTestInt(int value, bool expectedResult)
+        {
+            Assert.AreEqual(expectedResult, value.IsPrime());
+        }
+
+        [Test]
+        [TestCase(2, true)]
+        [TestCase(3, true)]
+        [TestCase(1, false)]
+        [TestCase(0, false)]
+        [TestCase(-11, false)]
+        [TestCase(17, true)]
+        [TestCase(487, true)]
+        [TestCase(184467440739551557, false)]
+        [TestCase(184467440739551553, false)]
+        [TestCase(92233720368575807, false)]
+        public void IsPrimeTestLong(long value, bool expectedResult)
+        {
+            Assert.AreEqual(expectedResult, value.IsPrime());
         }
     }
 }
