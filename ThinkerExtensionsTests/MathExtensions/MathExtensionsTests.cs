@@ -96,6 +96,7 @@ namespace ThinkerExtensions.MathExtensions.Tests
         [TestCase(17, true)]
         [TestCase(472882049, true)]
         [TestCase(472882047, false)]
+        [TestCase(int.MaxValue, true)]
         public void IsPrimeTestInt(int value, bool expectedResult)
         {
             Assert.AreEqual(expectedResult, value.IsPrime());
@@ -112,9 +113,11 @@ namespace ThinkerExtensions.MathExtensions.Tests
         [TestCase(184467440739551557, false)]
         [TestCase(184467440739551553, false)]
         [TestCase(92233720368575807, false)]
+        [TestCase(67280421310721, true)]
+        [TestCase(3203431780337, true)]
         public void IsPrimeTestLong(long value, bool expectedResult)
         {
-            Assert.AreEqual(expectedResult, value.IsPrime());
+            Assert.AreEqual(expectedResult, value.IsPrime()); 
         }
     }
 }

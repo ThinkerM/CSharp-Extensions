@@ -101,12 +101,12 @@ namespace ThinkerExtensions.MathExtensions
         /// <returns>True if value is prime, False otherwise</returns>
         public static bool IsPrime(this long value)
         {
-            if (value == 1) return false;
             if (value <= 0) return false;
+            if (value == 1) return false;
             if (value == 2) return true;
             if (value % 2 == 0) return false;
 
-            int boundary = (int)Math.Floor(Math.Sqrt(value));
+            int boundary = (int)Math.Ceiling(Math.Sqrt(value));
 
             for (int i = 3; i <= boundary; i += 2)
             {
