@@ -14,15 +14,9 @@ namespace ThinkerExtensions.DictionaryExtensions.Tests
         private IDictionary<dynamic, int> dictionary;
 
         [SetUp]
-        public void SetUpDictionary()
+        public void InitializeTest()
         {
             dictionary = new Dictionary<dynamic, int>();
-        }
-
-        [TearDown]
-        public void ClearDictionary()
-        {
-            dictionary.Clear();
         }
 
         [Test]
@@ -43,7 +37,7 @@ namespace ThinkerExtensions.DictionaryExtensions.Tests
         [TestCase(2.255, 2)]
         [TestCase(ConsoleKey.E, -10)]
         [TestCase("key", 10000)]
-        public void MultipleIncrementTest<T>(T key, int incrementValue = 1)
+        public void IncrementRepeatedlyTest<T>(T key, int incrementValue = 1)
         {
             dictionary.Increment(key, incrementValue);
             Assert.AreEqual(incrementValue, dictionary[key]);
