@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 
 namespace ThinkerExtensions.StringAndCharsExtensions
@@ -137,6 +138,18 @@ namespace ThinkerExtensions.StringAndCharsExtensions
             return amount >= value.Length
                 ? string.Empty
                 : value.Substring(amount);
+        }
+
+        /// <summary>
+        /// Determine if the string is convertible to the specified type
+        /// </summary>
+        /// <param name="value">String to check for convertibility</param>
+        /// <param name="type">Target type</param>
+        /// <returns>True if conversion is possible, false otherwise</returns>
+        public static bool CanConvertTo(this string value, Type type)
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(type);
+            return converter.IsValid(value);
         }
     }
 }
