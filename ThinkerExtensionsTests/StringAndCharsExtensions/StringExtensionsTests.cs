@@ -166,5 +166,15 @@ namespace ThinkerExtensions.StringExtensions.Tests
         {
             Assert.AreEqual(expectedResult, input.RemoveFirst(amountToRemove));
         }
+
+        [Test]
+        [TestCase("12", typeof(int), true)]
+        [TestCase("-1", typeof(int), true)]
+        [TestCase("string", typeof(int), false)]
+        [TestCase("12.5.2018", typeof(DateTime), true)]
+        public void CanConvertToTest(string input, Type targetType, bool expectedResult)
+        {
+            Assert.AreEqual(expectedResult, input.CanConvertTo(targetType));
+        }
     }
 }
