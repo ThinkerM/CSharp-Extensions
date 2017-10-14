@@ -90,7 +90,7 @@ namespace ThinkerExtensions.MathExtensions
         /// <returns>True if value is prime, False otherwise</returns>
         public static bool IsPrime(this int value)
         {
-            long longValue = (long) value;
+            long longValue = value;
             return longValue.IsPrime();
         }
 
