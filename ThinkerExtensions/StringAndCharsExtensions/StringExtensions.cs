@@ -151,5 +151,19 @@ namespace ThinkerExtensions.StringAndCharsExtensions
             TypeConverter converter = TypeDescriptor.GetConverter(type);
             return converter.IsValid(value);
         }
+
+        /// <summary>
+        /// Use the framework's safe parsing method to obtain 
+        /// either an integral value contained in the string or <see cref="defaultValue"/>
+        /// </summary>
+        /// <param name="value">String to try parsing from</param>
+        /// <param name="defaultValue">Value to be returned if a proper value could not be parsed</param>
+        /// <returns></returns>
+        public static int ParseIntSafe(this string value, int defaultValue = 0)
+        {
+            return int.TryParse(value, out int result)
+                ? result
+                : defaultValue;
+        }
     }
 }
