@@ -176,5 +176,18 @@ namespace ThinkerExtensions.StringExtensions.Tests
         {
             Assert.AreEqual(expectedResult, input.CanConvertTo(targetType));
         }
+
+        [Test]
+        [TestCase("0", 0)]
+        [TestCase("2", 2)]
+        [TestCase("-100", -100)]
+        [TestCase("hundred", 0)]
+        [TestCase("hundred", -5, -5)]
+        [TestCase("150", 150, -1)]
+        [TestCase("str28", 0)]
+        public void ParseIntSafeTest(string input, int expectedValue, int defaultValue = 0)
+        {
+            Assert.AreEqual(expectedValue, input.ParseIntSafe(defaultValue));
+        }
     }
 }
