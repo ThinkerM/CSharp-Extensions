@@ -47,6 +47,7 @@
     <Compile Include="GraphicalExtensions\GdiExtensions.cs" />
     <Compile Include="GeometryExtensions\AdvancedGeometry.cs" />
     <Compile Include="GeometryExtensions\Angle.cs" />
+    <Compile Include="LinqExtensions\LinqExtensions.cs" />
     <Compile Include="StringAndCharsExtensions\CharExtensions.cs" />
     <Compile Include="GeometryExtensions\GeometryExtensions.cs" />
     <Compile Include="MathExtensions\MathExtensions.cs" />
