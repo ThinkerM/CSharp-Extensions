@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ThinkerExtensions</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>ThinkerM</authors>
+    <owners>ThinkerM</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Personal collection of extensions</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>CSharp extensions</tags>
+  </metadata>
+</package>

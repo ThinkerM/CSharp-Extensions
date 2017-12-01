@@ -1,10 +1,6 @@
-﻿using ThinkerExtensions.MathExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using NUnit.Framework;
+using ThinkerExtensions.Math;
 
 namespace ThinkerExtensions.MathExtensions.Tests
 {

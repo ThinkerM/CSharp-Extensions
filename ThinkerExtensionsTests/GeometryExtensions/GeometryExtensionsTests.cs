@@ -1,11 +1,6 @@
 ﻿using NUnit.Framework;
-using ThinkerExtensions.GeometryExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
+using ThinkerExtensions.Geometry;
 
 namespace ThinkerExtensions.GeometryExtensions.Tests
 {
@@ -16,7 +11,7 @@ namespace ThinkerExtensions.GeometryExtensions.Tests
         [TestCase(0, 0)]
         [TestCase(1, 57)]
         [TestCase(-1, -57)]
-        [TestCase(Math.PI, 180)]
+        [TestCase(System.Math.PI, 180)]
         public void RadiansToDegreesTest(double radians, int expectedResult)
         {
             Assert.AreEqual(radians.ToDegrees(), expectedResult);
@@ -27,7 +22,7 @@ namespace ThinkerExtensions.GeometryExtensions.Tests
         [TestCase(90, 1.57)]
         public void DegreesToRadiansTest(int degrees, double expectedResult)
         {
-            Assert.AreEqual(Math.Round(degrees.ToRadians(), 2), expectedResult);
+            Assert.AreEqual(System.Math.Round(degrees.ToRadians(), 2), expectedResult);
         }
 
         [Test]
@@ -46,7 +41,7 @@ namespace ThinkerExtensions.GeometryExtensions.Tests
 
             p1 = new Point(1,1);
             p2 = new Point(2,2);
-            var roundedDistance = Math.Round(p1.DistanceTo(p2));
+            var roundedDistance = System.Math.Round(p1.DistanceTo(p2));
             Assert.AreEqual(1, roundedDistance);
         }
     }

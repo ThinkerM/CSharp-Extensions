@@ -1,10 +1,7 @@
 ﻿using NUnit.Framework;
-using ThinkerExtensions.DictionaryExtensions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ThinkerExtensions.Dictionary;
 
 namespace ThinkerExtensions.DictionaryExtensions.Tests
 {
