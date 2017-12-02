@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ThinkerExtensions.Controls
@@ -34,6 +35,38 @@ namespace ThinkerExtensions.Controls
             form.WindowState = FormWindowState.Normal;
             form.BringToFront();
             form.Focus();
+        }
+
+        /// <summary>
+        /// Gradually increase the form's opacity, making it fully visible
+        /// </summary>
+        /// <param name="form">Form to fade in</param>
+        /// <param name="interval">(Milliseconds) Delay between each opacity gradient shift</param>
+        public static async void FadeIn(this Form form, int interval = 80)
+        {
+            //Form is not fully visible => keep fading in
+            while (form.Opacity < 1.0)
+            {
+                await Task.Delay(interval);
+                form.Opacity += 0.05;
+            }
+            form.Opacity = 1; //make fully visible 
+        }
+
+        /// <summary>
+        /// Gradually decrease the form's opacity, eventually making it invisible
+        /// </summary>
+        /// <param name="form">Form to fade out</param>
+        /// <param name="interval">(Milliseconds) Delay between each opacity gradient shift</param>
+        public static async void FadeOut(this Form form, int interval = 80)
+        {
+            //Form is still visible => keep fading out
+            while (form.Opacity > 0.0)
+            {
+                await Task.Delay(interval);
+                form.Opacity -= 0.05;
+            }
+            form.Opacity = 0; //make fully invisible 
         }
     }
 }
