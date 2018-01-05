@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ThinkerExtensions.Math
 {
@@ -14,7 +15,7 @@ namespace ThinkerExtensions.Math
         /// <returns>True if value is double.NaN, False otherwise</returns>
         public static bool IsNaN(this double value)
         {
-            return Double.IsNaN(value);
+            return double.IsNaN(value);
         }
 
         /// <summary>
@@ -114,6 +115,38 @@ namespace ThinkerExtensions.Math
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Determines if the item is within the boundaries of two other items (inclusive bounds)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static bool IsBetween<T>(this T item, T left, T right)
+            where T : IComparable, IComparable<T>
+        {
+            return (item.CompareTo(left) >= 0 && item.CompareTo(right) <= 0)
+                   ||
+                   (item.CompareTo(left) <= 0 && item.CompareTo(right) >= 0);
+        }
+
+        /// <summary>
+        /// Determines if the item is within the exlusive bounds of two other items
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static bool IsBetweenExclusive<T>(this T item, T left, T right)
+            where T : IComparable, IComparable<T>
+        {
+            return (item.CompareTo(left) > 0 && item.CompareTo(right) < 0)
+                   ||
+                   (item.CompareTo(left) < 0 && item.CompareTo(right) > 0);
         }
     }
 }

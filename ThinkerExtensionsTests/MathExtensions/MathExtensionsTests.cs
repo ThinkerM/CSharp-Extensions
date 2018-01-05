@@ -115,5 +115,37 @@ namespace ThinkerExtensions.MathExtensions.Tests
         {
             Assert.AreEqual(expectedResult, value.IsPrime()); 
         }
+
+        [Test]
+        [TestCase(1, 2, 3, false)]
+        [TestCase(0, -1, 0, true)]
+        [TestCase(-1, -1, 0, true)]
+        [TestCase(0, 0, 0, true)]
+        [TestCase(10, 9, 11, true)]
+        [TestCase(10, 11, 9, true)]
+        [TestCase(100, 5, -5, false)]
+        [TestCase('a', 'b', 'c', false)]
+        [TestCase('h', 'b', 'z', true)]
+        public void IsBetweenTest<T>(T item, T left, T right, bool expectedResult)
+            where T : IComparable, IComparable<T>
+        {
+            Assert.AreEqual(expectedResult, item.IsBetween(left, right));
+        }
+
+        [Test]
+        [TestCase(1, 2, 3, false)]
+        [TestCase(0, -1, 0, false)]
+        [TestCase(-1, -1, 0, false)]
+        [TestCase(0, 0, 0, false)]
+        [TestCase(10, 9, 11, true)]
+        [TestCase(10, 11, 9, true)]
+        [TestCase(100, 5, -5, false)]
+        [TestCase('a', 'b', 'c', false)]
+        [TestCase('h', 'b', 'z', true)]
+        public void IsBetweenExclusiveTest<T>(T item, T left, T right, bool expectedResult)
+            where T : IComparable, IComparable<T>
+        {
+            Assert.AreEqual(expectedResult, item.IsBetweenExclusive(left, right));
+        }
     }
 }
