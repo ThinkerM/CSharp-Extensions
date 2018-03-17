@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ThinkerExtensions.Math
 {
@@ -126,7 +125,7 @@ namespace ThinkerExtensions.Math
         /// <param name="right"></param>
         /// <returns></returns>
         public static bool IsBetween<T>(this T item, T left, T right)
-            where T : IComparable, IComparable<T>
+            where T : IComparable<T>
         {
             return (item.CompareTo(left) >= 0 && item.CompareTo(right) <= 0)
                    ||
@@ -142,7 +141,7 @@ namespace ThinkerExtensions.Math
         /// <param name="right"></param>
         /// <returns></returns>
         public static bool IsBetweenExclusive<T>(this T item, T left, T right)
-            where T : IComparable, IComparable<T>
+            where T : IComparable<T>
         {
             return (item.CompareTo(left) > 0 && item.CompareTo(right) < 0)
                    ||
