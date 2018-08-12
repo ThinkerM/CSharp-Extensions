@@ -40,6 +40,26 @@ namespace ThinkerExtensions.Math
         }
 
         /// <summary>
+        /// Raises the number to the power of 2
+        /// </summary>
+        /// <param name="value">Number to raise</param>
+        /// <returns>Specified value raised to its 2nd power</returns>
+        public static int Squared(this int value)
+        {
+            return (int)System.Math.Pow(value, 2);
+        }
+
+        /// <summary>
+        /// Raises the number to the power of 2
+        /// </summary>
+        /// <param name="value">Number to raise</param>
+        /// <returns>Specified value raised to its 2nd power</returns>
+        public static double Squared(this double value)
+        {
+            return System.Math.Pow(value, 2);
+        }
+
+        /// <summary>
         /// Rounds the value to a specified number of fractional digits
         /// </summary>
         /// <param name="value"></param>

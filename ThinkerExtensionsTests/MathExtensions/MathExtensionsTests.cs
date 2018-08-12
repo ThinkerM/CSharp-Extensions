@@ -28,26 +28,53 @@ namespace ThinkerExtensions.MathExtensions.Tests
         }
 
         [Test]
-        [TestCase(-1, 1, -1)]
-        [TestCase(0, 100, 0)]
-        [TestCase(2, 2, 4)]
-        [TestCase(4, 0.5, 2)]
-        [TestCase(10, 3, 1000)]
-        [TestCase(-150, 0, 1)]
-        [TestCase(-100, -1, -0.01)]
-        [TestCase(1, 150, 1)]
-        public void PowerTestInt(int value, double power, double expectedResult)
+        [TestCase(-1, 1)]
+        [TestCase(0, 100)]
+        [TestCase(2, 2)]
+        [TestCase(4, 0.5)]
+        [TestCase(10, 3)]
+        [TestCase(-150, 0)]
+        [TestCase(-100, -1)]
+        [TestCase(1, 150)]
+        public void PowerTestInt(int value, double power)
         {
+            double expectedResult = System.Math.Pow(value, power);
             Assert.AreEqual(expectedResult, value.Power(power));
         }
 
         [Test]
-        [TestCase(2.5, 2, 6.25)]
-        [TestCase(0.1, 1, 0.1)]
-        [TestCase(100, -1, 0.01)]
-        public void PowerTestDouble(double value, double power, double expectedResult)
+        [TestCase(2.5, 2)]
+        [TestCase(0.1, 1)]
+        [TestCase(100, -1)]
+        [TestCase(67.8, 3.67)]
+        [TestCase(-70.77, -6.5)]
+        public void PowerTestDouble(double value, double power)
         {
+            double expectedResult = System.Math.Pow(value, power);
             Assert.AreEqual(expectedResult, value.Power(power));
+        }
+
+        [Test]
+        [TestCase(1)]
+        [TestCase(0)]
+        [TestCase(56)]
+        [TestCase(-72)]
+        [TestCase(1000)]
+        public void SquaredTestInt(int value)
+        {
+            int expectedResult = (int)System.Math.Pow(value, 2);
+            Assert.AreEqual(expectedResult, value.Squared());
+        }
+
+        [Test]
+        [TestCase(2.5)]
+        [TestCase(0.125)]
+        [TestCase(100)]
+        [TestCase(-6.76)]
+        public void SquaredTestDouble(double value)
+        {
+            double expectedResult = System.Math.Pow(value, 2);
+            Assert.AreEqual(expectedResult, value.Squared());
         }
 
         [Test]
